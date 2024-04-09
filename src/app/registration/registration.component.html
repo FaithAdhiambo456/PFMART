@@ -1,0 +1,39 @@
+<h1>Register Here!</h1>
+<div class="container">
+    <form #registrationForm="ngForm" (ngSubmit)="OnFormSubmitted(registrationForm)">
+    <div>
+        <label for="fname">First Name: </label>
+        <input type="text" id="fname" name="fname" ngModel required/><br>
+    </div>
+    <div>
+        <label for="lname">Last Name: </label>
+        <input type="text" id="lname" name="lname" ngModel required/><br>
+    </div>
+    <div>
+        <label for="email">Email Address: </label>
+        <input type="email" id="email" name="email" ngModel required/>
+    </div>
+    <div>
+        <label for="rlocation">Residence Location:</label>
+        <input type="text" id="rlocation" name="rlocation" ngModel required/>
+    </div>
+    <div>
+        <label for="phone">Phone number: </label>
+        <input type="tel" id="phone" name="phone" ngModel required/>
+    </div>
+    <div>
+        <label for="dob">Date of Birth: </label>
+        <input type="date" id="dob" name="dob" ngModel required/>
+    </div>
+    <div>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" ngModel required/>
+    </div>
+    <div>
+      <button class="button" type="submit">Submit</button>
+      
+      </div>
+    
+     </form>
+    </div>
+    
