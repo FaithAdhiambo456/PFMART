@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject,} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { User } from '../Model/user';
 
 @Component({
   selector: 'app-registration',
@@ -7,8 +9,19 @@ import { NgForm } from '@angular/forms';
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
+
+  constructor(
+    private http: HttpClient
+  ) { }
+  //http: HttpClient = Inject(HttpClient)
+
+
   
     OnFormSubmitted(form: NgForm){
-    console.log(form.value);
+      // this.http.post('https://pfmart-d8656-default-rtdb.firebaseio.com/users.json', form)
+      // .subscribe((response) => {
+      //   console.log(response);
+      // });
+  console.log(form.value);
   }
 }
