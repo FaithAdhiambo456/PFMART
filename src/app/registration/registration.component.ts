@@ -16,10 +16,11 @@ export class RegistrationComponent{
   
   
     OnFormSubmitted(form: NgForm){
-      this.http.post('https://pfmart-d8656-default-rtdb.firebaseio.com/users.json', form)
-      .subscribe((response) => {
-        console.log(response);
-      });
+      // this.http.post('https://pfmart-d8656-default-rtdb.firebaseio.com/users.json', form)
+      // .subscribe((response) => {
+      //   console.log(response);
+      // });
+    
   console.log(form.value);
   }
   

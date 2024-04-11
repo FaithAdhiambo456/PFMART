@@ -13,8 +13,9 @@ export class AuthInterceptorService implements HttpInterceptor {
     console.log('Auth Interceptor called!')
     // Modify the request or do something before sending it
     // For example, you can add headers here
-
+//TIP: you first clone the req then modify the request before sending it to the server as below:
+const modifiedReq =req.clone({headers:req.headers.append('auth', 'abxyszx') })
     // Pass the modified request to the next interceptor or to the HTTP handler
-    return next.handle(req);
+    return next.handle(modifiedReq);      //modified request is passed to the next destination
   }
 }
