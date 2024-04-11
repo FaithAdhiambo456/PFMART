@@ -14,6 +14,8 @@ import { ServicesComponent } from './dashboard/services/services.component';
 import { ContactComponent } from './dashboard/contact/contact.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { PageNotFoundComponent } from './dashboard/page-not-found/page-not-found.component';
+import { AuthInterceptorService } from './Pfmart Services/auth-interceptor.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 
@@ -38,8 +40,11 @@ import { PageNotFoundComponent } from './dashboard/page-not-found/page-not-found
     
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptorService, multi: true},
+    provideAnimationsAsync()  //the order in which we provide these interceptor services is the same order in which they will be executed
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
